@@ -13,8 +13,8 @@ class MyDocument extends Document {
           <link href="tailwind.css" rel="stylesheet" />
         </Head>
         <body>
-        <Main />
-        <NextScript />
+          <Main />
+          <NextScript />
         </body>
       </Html>
     );

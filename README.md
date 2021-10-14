@@ -1,29 +1,14 @@
 # Next.js + Tailwind CSS Example
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+A solution of [this discussion](https://github.com/rsuite/rsuite/discussions/1971).
 
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
+Visit build product online: https://tailwind-cli-demo-lkctf3d65-takeitizzy.vercel.app/
 
-## Preview
+This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js when you have to override webpack css config built in Next.js. This behavior will [disable several css support](https://nextjs.org/docs/messages/built-in-css-disabled) and may invalidate tailwindcss.
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+Use [tailwind cli](https://tailwindcss.com/docs/installation#using-tailwind-cli) instead of the usual tailwind installation is a solution in this scenario.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+Thanks to the [static file serving](https://nextjs.org/docs/basic-features/static-file-serving) feature about Next.js, we can integrate tailwind cli easy with Next.js as long as following these steps:
 
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+1. Run `npx tailwindcss -o public/tailwind.css --watch`, this command line will generate a css file in public folder at first time, and update this file each time you edit className in react components.
+2. Link this css file at `_document.js`. You can copy my code [here](./pages/_document.js).
