@@ -2,7 +2,7 @@
 
 A solution of [this discussion](https://github.com/rsuite/rsuite/discussions/1971).
 
-Visit build product online: https://tailwind-cli-demo-lkctf3d65-takeitizzy.vercel.app/
+Visit build product online: https://tailwind-cli-demo.vercel.app/
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js when you have to override webpack css config built in Next.js. This behavior will [disable several css support](https://nextjs.org/docs/messages/built-in-css-disabled) and may invalidate tailwindcss.
 
